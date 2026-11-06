@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Estudiantes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Registro de Estudiantes</h2>
+
+    <form id="studentForm" novalidate>
+      <div class="grid-form">
+        <!-- Cédula -->
+        <div class="form-group">
+          <label for="cedula">Cédula:</label>
+          <input type="text" id="cedula" name="cedula" maxlength="10" placeholder="Ej: 1312345678" required>
+          <span class="error-msg" id="error-cedula"></span>
+        </div>
+
+        <!-- Apellidos -->
+        <div class="form-group">
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos" placeholder="Ej: Pérez Mendoza" required>
+          <span class="error-msg" id="error-apellidos"></span>
+        </div>
+
+        <!-- Nombres -->
+        <div class="form-group">
+          <label for="nombres">Nombres:</label>
+          <input type="text" id="nombres" name="nombres" placeholder="Ej: Juan Carlos" required>
+          <span class="error-msg" id="error-nombres"></span>
+        </div>
+
+        <!-- Dirección -->
+        <div class="form-group">
+          <label for="direccion">Dirección:</label>
+          <input type="text" id="direccion" name="direccion" placeholder="Ej: Av. 24 y Calle 13" required>
+          <span class="error-msg" id="error-direccion"></span>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="form-group">
+          <label for="telefono">Teléfono (Móvil):</label>
+          <input type="text" id="telefono" name="telefono" maxlength="10" placeholder="Ej: 0991234567" required>
+          <span class="error-msg" id="error-telefono"></span>
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div class="form-group">
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" name="correo" placeholder="Ej: estudiante@dominio.com" required>
+          <span class="error-msg" id="error-correo"></span>
+        </div>
+
+        <!-- Facultad -->
+        <div class="form-group">
+          <label for="facultad">Facultad:</label>
+          <select id="facultad" name="facultad" required>
+            <option value="">-- Seleccionar --</option>
+            <option value="Ciencias Informáticas">Ciencias Informáticas</option>
+            <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+            <option value="Ciencias Administrativas">Ciencias Administrativas</option>
+            <option value="Arquitectura">Arquitectura</option>
+          </select>
+          <span class="error-msg" id="error-facultad"></span>
+        </div>
+
+        <!-- Nivel -->
+        <div class="form-group">
+          <label for="nivel">Nivel / Semestre:</label>
+          <select id="nivel" name="nivel" required>
+            <option value="">-- Seleccionar --</option>
+            <option value="1">1er Nivel</option>
+            <option value="2">2do Nivel</option>
+            <option value="3">3er Nivel</option>
+            <option value="4">4to Nivel</option>
+            <option value="5">5to Nivel</option>
+            <option value="6">6to Nivel</option>
+            <option value="7">7mo Nivel</option>
+            <option value="8">8vo Nivel</option>
+          </select>
+          <span class="error-msg" id="error-nivel"></span>
+        </div>
+
+        <!-- Paralelo -->
+        <div class="form-group">
+          <label for="paralelo">Paralelo:</label>
+          <input type="text" id="paralelo" name="paralelo" maxlength="2" placeholder="Ej: A" required>
+          <span class="error-msg" id="error-paralelo"></span>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" id="btnGuardar">Registrar Estudiante</button>
+      </div>
+    </form>
+
+    <hr>
+
+    <h3>Estudiantes Registrados</h3>
+    <div class="table-responsive">
+      <table id="tablaEstudiantes">
+        <thead>
+          <tr>
+            <th>Cédula</th>
+            <th>Nombres y Apellidos</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Facultad</th>
+            <th>Nivel</th>
+            <th>Paralelo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="listaEstudiantes">
+          <!-- Se puebla dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
